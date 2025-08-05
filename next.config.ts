@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  async rewrites() {
+    return [
+      {
+        source: '/api/getAllArea',
+        destination: 'https://seat.tpml.edu.tw/sm/service/getAllArea'
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig
