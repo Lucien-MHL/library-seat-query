@@ -14,7 +14,7 @@ export const useLibrarySeatStore = create<LibrarySeatState>((set) => ({
   loading: false,
   error: null,
   fetchAreas: async () => {
-    set({ loading: true, error: null })
+    set({ loading: true, error: null, areas: [] })
     try {
       const res = await axios.get<LibrarySeatArea[]>('/api/getAllArea')
       set({ areas: res.data, loading: false })
